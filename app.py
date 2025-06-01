@@ -29,15 +29,11 @@ app = Flask(__name__)
 configuration = Configuration(access_token=YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
-@app.route('/a', methods=["GET"])
-def hello_worlda():
-    return "a"
-
 app = Flask(__name__)
 
-configuration = Configuration(access_token='YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
-
+@app.route('/', methods=["GET"])
+def hello_worlda():
+    return "a"
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -68,5 +64,5 @@ def handle_message(event):
             )
         )
 
-if __name__ == '__main__':
-    app.run(port=5100)
+# if __name__ == '__main__':
+#     app.run(port=5100)
