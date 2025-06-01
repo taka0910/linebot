@@ -20,10 +20,8 @@ from linebot.v3.webhooks import (
 )
 
 # OPENAI_APIKEY = os.getenv("API_KEY")
-YOUR_CHANNEL_ACCESS_TOKEN = "6zGTWgkua4RK2XmfS0ZspDp9HaqzgKPQJavBRN6jvQ1JKCrYDlnA4IovRgP6VxAK7p8XNNwfGq+UX7RgdBAn1uE/fEuMVtqy1nbTy8GFJhDanVOgcYMzlT5BDPrESPYhs1dblQTzHOxxc1abh1yd1QdB04t89/1O/w1cDnyilFU="
-YOUR_CHANNEL_SECRET= "c71b97f2b40145de755b6a6f92bb1bc5"
-
-
+YOUR_CHANNEL_ACCESS_TOKEN = os.getenv("YOUR_CHANNEL_ACCESS_TOKEN")
+YOUR_CHANNEL_SECRET= os.getenv("YOUR_CHANNEL_SECRET")
 
 app = Flask(__name__)
 
@@ -70,10 +68,5 @@ def handle_message(event):
             )
         )
 
-# event.message.textが送られてきたメッセージ
-
-
 if __name__ == '__main__':
     app.run(port=5100)
-
-print("完了")
